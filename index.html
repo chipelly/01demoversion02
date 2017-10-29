@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 下列移动端适配输入为emmet语法：`meta:vp` -->
+	<!-- 注释代码ctrl+/ -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title></title>
+</head>
+<body data-status="index" class='debody'>
+	<canvas id="game"></canvas>
+	<div class="ui-index">
+      <h1>飞机大作战</h1>
+      <div class="btn-group">
+        <button class="js-start btn">开始游戏</button>
+        <button class="js-setting btn">游戏设置</button>
+        <button class="js-rule btn">游戏说明</button>
+      </div>
+    </div>
+
+	<div class="ui-rule ui-panel">
+		<h2>游戏说明</h2>
+		<p>通过手指移动来指挥飞机,可以选择战机类型以及作战场地，击落大的加1000分，击落小的加100分.</p>
+		<button class="js-confirm-rule">我知道了</button>
+	</div>
+	<!-- 当含有表格ul，li时，一定注意是否已包含 -->
+	<div class="ui-setting ui-panel">
+		<h2>游戏设置</h2>
+		<!-- ul.setting-group>li.setting*3 -->
+		<ul class="setting-group">
+			<li class="setting">
+				<span class="setting-title">音乐设置</span>
+				<select id="setting-music">
+					<option value="1">开启音乐</option>
+					<option value="0">关闭音乐</option>
+				</select>
+			</li>
+			<li class="setting">
+				<span class="setting-title">背景设置</span>
+				<select id="setting-bg" onchange='show_sub(this.option[this.options.selectedIndex].value')>
+					<option valve='0'>夜袭111</option>
+					<option valve='1'>迷失222</option>
+					<option valve='2'>原始333</option>
+					<option valve='3'>爆裂444</option>
+				</select
+			</li>
+			<li class="setting">
+				<span class="setting-title">战机设置</span>
+				<select id="setting-plane">
+					<option value="bluePlaneIcon">蓝色战机</option>
+					<option value="pinkPlaneIcon">粉红战机</option>
+				</select>
+			</li>
+		</ul>
+		<button class="js-confirm-setting">确认设置</button>
+	</div>
+	
+	<!-- 页面js -->
+	<script src='https://cdn.bootcss.com/jquery/3.2.1/jquery.js'></script>
+	<script src='js/config.js'></script>
+	<script src='js/resource.js'></script>
+	<script src='js/element.js'></script>
+	<script src='js/bullet.js'></script>
+	<script src='js/enemy.js'></script>
+	<script src='js/plane.js'></script>
+	<script src='js/app.js'></script>
+</body>
+</html>
